@@ -291,13 +291,13 @@ export function GamePage() {
         ) : (
           <>
             {gameState.phase === 1 && (
-              <div className="z-20 flex w-full animate-blinking items-center justify-center gap-4 bg-phase text-white md:flex-col md:items-start md:gap-0 md:bg-none md:text-black">
+              <div className="animate-phase z-20 flex w-full items-center justify-center gap-4 bg-phase text-white md:flex-col md:items-start md:gap-0 md:bg-none md:text-black">
                 <h1 className="font-phase text-xl md:text-6xl">Phase 1</h1>
                 <span className="text-lg font-semibold">돌 배치 단계</span>
               </div>
             )}
             {gameState.phase === 2 && (
-              <div className="z-20 flex w-full animate-blinking items-center justify-center gap-4 bg-phase text-white md:flex-col md:items-start md:gap-0 md:bg-none md:text-black">
+              <div className="animate-phase z-20 flex w-full items-center justify-center gap-4 bg-phase text-white md:flex-col md:items-start md:gap-0 md:bg-none md:text-black">
                 <h1 className="font-phase text-xl md:text-6xl">Phase 2</h1>
                 <span className="text-lg font-semibold">돌 이동 단계</span>
               </div>
@@ -325,6 +325,9 @@ export function GamePage() {
         />
       )}
       <div className="flex w-full flex-col items-center justify-between md:flex-row-reverse md:items-end">
+        {/* {isPlayerTurn() && (
+          <div className="bg-turn-effect animate-turn-effect fixed bottom-0 -z-10 h-64 w-full" />
+        )} */}
         <Message
           phase={gameState.phase}
           removing={gameState.removing}

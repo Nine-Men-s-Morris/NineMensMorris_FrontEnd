@@ -14,6 +14,8 @@ export default {
         'selected-stone': 'conic-gradient(transparent 180deg, #ff0000 360deg)',
         phase:
           'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(31,41,55,1) 20%, rgba(31,41,55,1) 80%, rgba(255,255,255,0) 100%)',
+        'turn-effect':
+          'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%)',
       },
       boxShadow: {
         stone: '0 4px 4px rgba(0,0,0,0.25)',
@@ -22,6 +24,10 @@ export default {
         'fade-in': {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
+        },
+        'fade-out': {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
         },
         'move-up': {
           '0%': { transform: 'translateY(5%)' },
@@ -52,12 +58,7 @@ export default {
         },
         blinking: {
           '0%': { opacity: 1 },
-          '10%': { opacity: 0 },
-          '20%': { opacity: 1 },
-          '30%': { opacity: 0 },
-          '40%': { opacity: 1 },
           '50%': { opacity: 0 },
-          '60%': { opacity: 1 },
         },
         refresh: {
           '0%': { transform: 'rotate(0deg)' },
@@ -71,7 +72,9 @@ export default {
         'stone-set-effect': 'stone-set-effect 0.75s ease-out forwards',
         'stone-selected-effect': 'stone-selected-effect 1s linear infinite',
         shaking: 'shaking 0.5s linear forwards',
-        blinking: 'blinking 2s linear forwards',
+        phase: 'blinking 0.25s linear alternate forwards 4',
+        'turn-arrow': 'blinking 1s linear alternate forwards infinite',
+        'turn-effect': 'fade-out 0.5s ease-out forwards',
         refresh: 'refresh 0.5s ease-out forwards',
       },
       screens: {

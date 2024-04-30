@@ -33,8 +33,8 @@ export function Status({
     <div
       className={`z-10 flex transition-opacity md:translate-x-0 ${visible ? 'visible' : 'invisible'}`}
     >
-      <div className={`gap-2 ${turn ? '' : 'opacity-0'}`}>
-        <Play />
+      <div className={`gap-2 ${visible && turn ? '' : 'opacity-0'}`}>
+        <Play className="animate-turn-arrow" />
       </div>
       <div className="flex w-56 flex-col gap-1">
         <div
