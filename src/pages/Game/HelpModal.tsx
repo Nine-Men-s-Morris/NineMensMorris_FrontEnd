@@ -38,7 +38,11 @@ const contents = [
         </div>
         <div>
           <b>2페이즈</b>에서는 보드 위에 배치한 자신의 돌 중 하나를 선택하여
-          인접한 칸으로 이동시킬 수 있습니다.
+          인접한 칸으로 이동시킬 수 있습니다. 이때,{' '}
+          <b className="text-red-500">
+            남은 돌이 3개뿐이라면 인접하지 않은 칸으로도 이동 가능
+          </b>
+          합니다.
         </div>
       </>
     ),
@@ -52,8 +56,11 @@ const contents = [
           만들어지는 경우, 상대의 돌 중 하나를 골라 제거할 수 있습니다.
         </div>
         <div>
-          단, 이때 제거하려는 돌은 <b>연속 3개 배열</b>에 속하지 않아야 하며,
-          가장 먼저 남은 돌이 <b>2개 이하</b>가 된 쪽이 패배합니다.
+          단,{' '}
+          <b className="text-red-500">
+            제거하려는 돌은 연속 3개 배열에 속하지 않아야 하며
+          </b>
+          , 가장 먼저 남은 돌이 <b>2개 이하</b>가 된 쪽이 패배합니다.
         </div>
       </>
     ),
@@ -89,9 +96,9 @@ export function HelpModal({ visible, onClose }: HelpModalProps) {
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <img
             src={contents[page].imageSrc}
-            className="h-64 w-64 items-center rounded-lg"
+            className="h-48 w-48 items-center rounded-lg object-contain md:h-64 md:w-64"
           />
-          <div className="flex w-80 flex-col gap-2 p-2">
+          <div className="flex max-w-80 flex-col gap-2 p-2">
             {contents[page].text}
             <span className="text-sm text-gray-500">({page + 1}/3)</span>
           </div>
